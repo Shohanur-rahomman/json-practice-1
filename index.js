@@ -1,22 +1,28 @@
 function buttonSubmit() {
-    fetch('https://microsoftedge.github.io/Demos/json-dummy-data/64KB.json')
+    fetch('https://jsonplaceholder.typicode.com/users')
         .then(res => res.json())
-        .then(data => displayName(data))
+        .then(data => showData(data))
+}
+
+const showData = (posts) => {
+    const myDiv = document.getElementById('first-container');
+    for (const index of posts) {
+        const div = document.createElement('div');
+        div.classList.add('flex', 'justify-start', 'items-start', 'gap-4', )
+        div.innerHTML = `
+            
+            <div class=" text-start flex-1">
+            ${index.name}
+            </div>
+            
+            <div class=" text-start flex-1">${index.email}</div>
+            <div class=" text-start flex-1">${index.username}</div>
         
-}
-
-function displayName(data) {
-    const ul1 = document.getElementById('disName');
-    const ul2 = document.getElementById('language')
-    
-    for (const item of data) {
-        let liList = document.createElement('li');
-        let liNew = document.createElement('li');
-        liNew.innerText = item.language;
-        liList.innerText = item.name;
-        ul1.appendChild(liList);
-        ul2.appendChild(liNew) 
+        `
+        myDiv.appendChild(div)
     }
-  
 }
 
+
+
+buttonSubmit()
