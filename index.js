@@ -8,7 +8,7 @@ const showData = (posts) => {
     const myDiv = document.getElementById('first-container');
     for (const index of posts) {
         const div = document.createElement('div');
-        div.classList.add('flex', 'justify-start', 'items-start', 'gap-4', )
+        div.classList.add('sm:flex', 'justify-start', 'items-start', 'gap-4', )
         div.innerHTML = `
             
             <div class=" text-start flex-1">
