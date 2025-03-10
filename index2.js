@@ -2,7 +2,6 @@ const handleData = async () => {
     try {
         const myData = await fetch('https://jsonplaceholder.typicode.com/posts');
         const posts = await myData.json();
-        console.log(posts);
         displayNewData(posts)
         
     }
