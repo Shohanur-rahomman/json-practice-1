@@ -9,7 +9,7 @@ postType()
 const showAllData = (posts)=>{
     const newDiv = document.getElementById('money-data');
     for(let i = 0; i< posts.length;i++){
-        console.log(posts[i]);
+        
         const div = document.createElement('div');
         div.classList.add('bg-white', 'shadow-md','rounded-lg')
         div.innerHTML = `
